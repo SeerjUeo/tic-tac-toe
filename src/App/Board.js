@@ -14,7 +14,7 @@ export default class Board extends Component {
 
 	onSquareClick(index) {
 		const squares = [...this.state.squares];
-		if (squares[index]) return
+		if (squares[index] || this.state.win) return
 		
 		this.checkEnd(index);
 		squares[index] = this.state.isXTurn ? 'X' : '0'
@@ -36,7 +36,7 @@ export default class Board extends Component {
 			
 			squares[0] == squares[4] == squares[8] == index || 
 			squares[2] == squares[4] == squares[6] == index) {
-				this.state.win = this.state.squares[index];
+				this.setState(this.state.win = this.state.squares[index]);
 			}
 	}
 
