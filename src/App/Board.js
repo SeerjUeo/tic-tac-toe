@@ -42,7 +42,7 @@ export default class Board extends Component {
 
 	render() {
 		return <div className="board">
-			<h1>Wiener: {this.state.win}</h1>
+			<h1>Winner: {this.state.win}</h1>
 			{
 				this.state.squares.map( 
 					(value, index) => <Square key={index}
